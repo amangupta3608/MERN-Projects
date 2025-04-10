@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.container{
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#taskInput{
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+#addBtn{
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#addBtn:hover{
+    background: #0056b3
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+
+li:hover{
+    background: #f1f1f1;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: #888;
+}
+
+.btn-group button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.btn-group button:hover{
+    transform: scale(1.2);
+}
+
+.done{
+    color: green;
+}
+
+.delete{
+    color: red;
+}
+
+.switch{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider{
+    background-color: #007bff; 
+}
+
+input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+  
+  /* --- Dark mode styles --- */
+  body.dark-mode {
+    background: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .container {
+    background: #2a2a2a;
+    box-shadow: none;
+  }
+  
+  body.dark-mode input,
+  body.dark-mode #taskInput {
+    background-color: #3a3a3a;
+    color: #fff;
+    border: 1px solid #555;
+  }
+  
+  body.dark-mode #addBtn {
+    background: #0d6efd;
+  }
+  
+  body.dark-mode li {
+    background: #333;
+  }
+  
+  body.dark-mode .completed {
+    color: #bbb;
+  }
